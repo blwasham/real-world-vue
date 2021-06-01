@@ -150,6 +150,24 @@
       "time": "2:00",
       "assignees": [],
       "location": "w"
+    },
+    {
+      "id": 2357581,
+      "user": {
+        "id": "abc123",
+        "name": "Bryan Washam"
+      },
+      "category": "Coaching",
+      "organizer": {
+        "id": "abc123",
+        "name": "Bryan Washam"
+      },
+      "title": "test",
+      "description": "2",
+      "date": "2021-05-05T18:34:00.000Z",
+      "time": "2:00",
+      "assignees": [],
+      "location": "3"
     }
   ]
 }

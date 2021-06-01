@@ -5,35 +5,35 @@
       name: 'todo-show',
       params: { id: todo.id }
     }"
-  >
+    ><pre>TEST {{ $attrs }}</pre>
     <div class="event-card -shadow">
       <span class="timestamp-text"> @{{ todo.time }} on {{ todo.date }} </span>
       <h4 class="title">{{ todo.title }}</h4>
       <p>{{ todo.description }}</p>
 
-      <span>
+      <!-- <span>
         Assigned To:
 
         <span v-for="assignee in todo.assignees" :key="assignee.name">
           <BaseIcon :name="assignee.icon">{{ assignee.name }}</BaseIcon>
         </span>
-      </span>
+      </span> -->
 
-      <!--<TodoAssignees :assignees="todo.assignees" />-->
+      <TodoAssignees :assignees="todo.assignees" />
     </div>
   </router-link>
 </template>
 
 <script>
 // allows component to be imported into other location
-// import TodoAssignees from '@/components/TodoAssignees.vue'
+import TodoAssignees from '@/components/TodoAssignees.vue'
 export default {
   props: {
     todo: Object
+  },
+  components: {
+    TodoAssignees
   }
-  // components: {
-  //   TodoAssignees
-  // }
 }
 </script>
 

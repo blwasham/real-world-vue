@@ -1,10 +1,12 @@
 <template>
   <span>
-    Assigned To:
+    <strong>Assigned To:
 
     <span v-for="assignee in assignees" :key="assignee.name">
       <!-- example of global component -->
-      <BaseIcon :name="assignee.icon">{{ assignee.name }}</BaseIcon>
+      <BaseIcon :name="assignee.icon">
+      
+      {{ assignee.name }}</BaseIcon>
     </span>
   </span>
 </template>

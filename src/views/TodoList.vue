@@ -1,7 +1,13 @@
 <template>
   <div>
     <h3>{{ title }} - {{ subTitle }}</h3>
-    <TodoCard v-for="todo in todos" :key="todo.id" :todo="todo" />
+    <TodoCard
+      v-for="todo in todos"
+      :key="todo.id"
+      :todo="todo"
+      :blablabla="true"
+      :class="'foobar'"
+    />
     <template v-if="hasPrevPage">
       <router-link
         :to="{ name: 'todo-list', query: { page: page - 1 } }"
@@ -34,7 +40,6 @@ import { sample } from 'lodash'
 function getInspiration(event) {
   // below prevents the html elements default action from happening
   event.preventDefault()
-
   const quotes = [
     'I always wanted to be somebody, but now I realize I should have been more specific',
     'If at first you don’t succeed, then skydiving definitely isn’t for you.',

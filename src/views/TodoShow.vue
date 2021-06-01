@@ -12,20 +12,20 @@
     <h5>Event details</h5>
     <p>{{ todo.description }}</p>
 
-    <span>
+    <!-- <span>
       Assigned To:
       <span v-for="assignee in todo.assignees" :key="assignee.name">
         <BaseIcon :name="assignee.icon">{{ assignee.name }}</BaseIcon>
       </span>
-    </span>
+    </span> -->
 
-    <!--<TodoAssignees :assignees="todo.assignees" />-->
+    <TodoAssignees :assignees="todo.assignees" />
   </div>
 </template>
 
 <script>
 import TodoService from '@/services/TodoService.js'
-// import TodoAssignees from '@/components/TodoAssignees.vue'
+import TodoAssignees from '@/components/TodoAssignees.vue'
 export default {
   props: ['id'],
   data() {
@@ -41,10 +41,10 @@ export default {
       .catch(error => {
         console.log('Error: ', error.response)
       })
+  },
+  components: {
+    TodoAssignees
   }
-  // components: {
-  //   TodoAssignees
-  // }
 }
 </script>
 <style scoped>
